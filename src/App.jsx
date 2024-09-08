@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react'
-import useLocalStorage from "./lib/hooks/useLocalStorage"
-import { Header } from "./components"
-import { HomePage, ToDoItemPage } from "./pages"
+import { Header, Footer } from "./components"
+import { AboutMe, Portfolio, Contact, Resume } from './pages'
 
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 
 
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
@@ -37,36 +36,24 @@ const fakeItems = [
 
 export default function App() {
 
-  const { getFromStorage, saveToStorage } = useLocalStorage()
-  const [ allItems, setAllItems ] = useState([])
+ 
 
-  // Let's make some dummy data 
-  const starterItems = [
-    { id: 1, title: "Item 1 Title", description: "This is all about item 1" }
-  ]
 
-  /*
-    When the app mounts let's check and see if there's anything in local storage. If not,
-    we'll add the dummy data. Whatever ends up being out starter items will also be put
-    into state.
-  */
-  useEffect( () => {
-    const foundItems = getFromStorage("todolist")
-    if(!foundItems){
-      setAllItems(starterItems)
-    } else {
-      setAllItems(foundItems)
-    }
-  },[])
 
 
   return (
     <BrowserRouter>
-      <Header/>
+      <Header />
       <Routes>
-        <Route path="/" element={<HomePage items={allItems} />} />
-        <Route path="/item/:id" element={<ToDoItemPage items={allItems} setItems={setAllItems} />} />
+
+        <Route path='/aboutme' element={<AboutMe />} /> 
+        <Route path='/portfolio' element={<Portfolio />} />
+        <Route path='/contact' element={<Contact />} />
+        <Route path='/resume' element={<Resume />} />
+        <Route exact path='/' element={<Navigate to='/aboutme' />} />
+
       </Routes>
+      <Footer />
     </BrowserRouter>
   )
 }

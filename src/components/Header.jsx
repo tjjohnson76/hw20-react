@@ -4,8 +4,10 @@ import { Link } from "react-router-dom"
 export default function Header(props) {
 
   const menu = [
-    { id: 1, label: "Home", href: "/" },
-    { id: 2, label: "Create To-Do Item", href: "/item/0" }
+    { id: 1, label: "About Me", href: "/aboutme" },
+    { id: 2, label: "Portfolio", href: "/portfolio"},
+    { id: 3, label: "Contact", href: "/contact"},
+    { id: 4, label: "Resume", href: "/resume"},
   ]
 
 
@@ -14,7 +16,7 @@ export default function Header(props) {
     <header className="container-fluid">
       <div className="row">
         <div className="col-4">
-          <h1>To Do List</h1>
+          <h1>Tanner Johnson</h1>
         </div>
         <div className="col-8">
           <ul className="nav">
