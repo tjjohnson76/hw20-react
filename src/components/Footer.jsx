@@ -14,19 +14,19 @@ export default function Footer() {
                 <div className="col-4" />
                 <div className="col-1" style={{margin: '20px'}}>
                     <a href="https://github.com/tjjohnson76">
-                        <VscGithubAlt />
+                        <VscGithubAlt size={42}/>
                     </a>
                 </div>
 
                 <div className="col-1" style={{margin: '20px'}}>
                 <a href="https://www.linkedin.com/in/tanner-j-johnson/">
-                        <AiOutlineLinkedin />
+                        <AiOutlineLinkedin size={42}/>
                     </a>
                 </div>
                 
                 <div className="col-1" style={{margin: '20px'}}>
                 <a href="https://stackoverflow.com/">
-                        <FaStackOverflow />
+                        <FaStackOverflow size={42}/>
                     </a>
                 </div>
             </div>

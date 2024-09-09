@@ -13,12 +13,13 @@ export default function Header(props) {
 
 
   return (
-    <header className="container-fluid" style={{backgroundColor: "#2e2e2e"}}>
+    <header className="container-fluid" style={{backgroundColor: "#2e2e2e", marginBottom: "20px"}}>
       <div className="row">
         <div className="col-4" style={{margin: "20px"}}>
           <h1>Tanner Johnson</h1>
         </div>
-        <div className="col-6" style={{margin: "20px"}}>
+        <div className="col-4"></div>
+        <div className="col-3" style={{margin: "20px"}}>
           <ul className="nav">
             {menu.map(item => (
               <li className="nav-item" key={item.id}>
