@@ -13,16 +13,16 @@ export default function Header(props) {
 
 
   return (
-    <header className="container-fluid">
+    <header className="container-fluid" style={{backgroundColor: "#2e2e2e"}}>
       <div className="row">
-        <div className="col-4">
+        <div className="col-4" style={{margin: "20px"}}>
           <h1>Tanner Johnson</h1>
         </div>
-        <div className="col-8">
+        <div className="col-6" style={{margin: "20px"}}>
           <ul className="nav">
             {menu.map(item => (
               <li className="nav-item" key={item.id}>
-                <Link className="nav-link" to={item.href}>{item.label}</Link>
+                <Link className="nav-link" style={{color: "#fff"}} to={item.href}>{item.label}</Link>
               </li>
             ))}
           </ul>
